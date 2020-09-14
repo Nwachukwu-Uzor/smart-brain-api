@@ -24,9 +24,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('it is working')
-})
+app.get('/', (req, res) => {res.send('it is working'})
 
 app.post('/signin', signin.handleSignin(dbPostgres, bcrypt));
 app.post('/register', (req, res) => { register.handleRegister(req, res, dbPostgres, bcrypt)}); 
